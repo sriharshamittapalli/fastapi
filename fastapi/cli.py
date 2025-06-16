@@ -1,8 +1,11 @@
+from typing import Callable, Optional
+
+cli_main: Optional[Callable[[], None]]
+
 try:
     from fastapi_cli.cli import main as cli_main
-
 except ImportError:  # pragma: no cover
-    cli_main = None  # type: ignore
+    cli_main = None
 
 
 def main() -> None:
